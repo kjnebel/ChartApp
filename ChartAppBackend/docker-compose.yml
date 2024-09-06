@@ -1,0 +1,10 @@
+services:
+  web:
+    build: ./chartapp-backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./chartapp-backend/:/usr/src/chartapp-backend/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
