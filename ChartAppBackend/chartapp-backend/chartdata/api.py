@@ -1,5 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
+import datetime
 
 
 # Includes a get call to retrieve the candlestick chart's data
@@ -8,10 +9,10 @@ class CandleStickData(APIView):
 
         data = {
             "data": [
-                {"x": "2023-01-01", "open": 30, "high": 40, "low": 25, "close": 35},
-                {"x": "2023-01-02", "open": 35, "high": 45, "low": 30, "close": 40},
-                {"x": "2023-01-03", "open": 40, "high": 50, "low": 35, "close": 45},
-                {"x": "2023-01-04", "open": 45, "high": 55, "low": 40, "close": 50},
+                {"x": datetime.datetime(2023, 1, 1).strftime('%Y-%m-%d'), "y": [30, 40, 25, 35]},
+                {"x": datetime.datetime(2023, 1, 2).strftime('%Y-%m-%d'), "y": [35, 45, 30, 40]},
+                {"x": datetime.datetime(2023, 1, 3).strftime('%Y-%m-%d'), "y": [40, 50, 35, 45]},
+                {"x": datetime.datetime(2023, 1, 4).strftime('%Y-%m-%d'), "y": [45, 55, 40, 50]},
             ]
         }
 
@@ -35,8 +36,12 @@ class BarChartData(APIView):
     def get(self, request):
 
         data = {
-            "labels": ["Product A", "Product B", "Product C"],
-            "data": [100, 150, 200]
+            "data":[
+                {"x": "Product A", "y": 100},
+                {"x": "Product B", "y": 150},
+                {"x": "Product C", "y": 200},
+                {"x": "Product D", "y": 175},
+            ]
         }
 
         return Response(data)
@@ -46,8 +51,8 @@ class BarChartData(APIView):
 class PieChartData(APIView):
     def get(self, request):
         data = {
-            "labels": ["Red", "Blue", "Yellow"],
-            "data": [300, 50, 100]
+            "labels": ["Blue", "Green", "Yellow", "Red"],
+            "data": [300, 50, 100, 75]
         }
 
         return Response(data)
