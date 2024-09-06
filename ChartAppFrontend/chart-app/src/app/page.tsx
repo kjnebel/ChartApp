@@ -6,12 +6,15 @@ import BarChart from "./charts/BarChart";
 
 export default function Home() {
   return (
-    <main>
-      Chart App
-      <CandlestickChart />
-      <LineChart />
-      <PieChart />
-      <BarChart />
-    </main>
+    <>
+      <div className="chartGroup">
+        <CandlestickChart />
+        <LineChart />
+      </div>
+      <div className="chartGroup">
+        <PieChart />
+        <BarChart />
+      </div>
+    </>
   );
 }

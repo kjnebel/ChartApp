@@ -12,15 +12,18 @@ const PieChart = () => {
         chart: {
           id: "pie-chart"
         },
+        legend: {
+            labels: {
+                colors: "#ABA4AA"
+            }
+        },
         labels: pieChartLabels
     }
 
     const getPieChartData = async () => {
         const url = 'http://localhost:8000/api/pie-chart-data/';
 
-        await fetch(url, {
-            method: 'GET'
-        }).then(response => response.json())
+        await fetch(url).then(response => response.json())
         .then((json) => {
             console.log('json: ', json.data)
             setPieChartLabels(json.labels);
@@ -41,6 +44,11 @@ const PieChart = () => {
             chart: {
               id: "pie-chart"
             },
+            legend: {
+                labels: {
+                    colors: "#ABA4AA"
+                }
+            },
             labels: pieChartLabels
         }
     }, [pieData, pieChartLabels])
@@ -52,6 +60,7 @@ const PieChart = () => {
                 series={series}
                 type="donut"
                 width="500"
+                className="chart"
             />
         </>
     )

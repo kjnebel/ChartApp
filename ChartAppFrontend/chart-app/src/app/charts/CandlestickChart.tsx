@@ -10,15 +10,27 @@ const CandlestickChart = () => {
     let options = {
         chart: {
           id: "candlestick-chart"
+        },
+        xaxis: {
+            labels: {
+                style: {
+                    colors: "#ABA4AA"
+                }
+            }
+        },
+        yaxis: {
+            labels: {
+                style: {
+                    colors: "#ABA4AA"
+                }
+            }
         }
     }
 
     const getCandlestickData = async () => {
         const url = 'http://localhost:8000/api/candlestick-data/';
 
-        await fetch(url, {
-            method: 'GET'
-        }).then(response => response.json())
+        await fetch(url).then(response => response.json())
         .then((json) => {
             setCandlestickData(json.data);
         })
@@ -42,6 +54,7 @@ const CandlestickChart = () => {
                 series={series}
                 type="candlestick"
                 width="500"
+                className="chart"
             />
         </>
     )

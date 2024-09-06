@@ -12,20 +12,30 @@ const LineChart = () => {
         chart: {
           id: "line-chart"
         },
-        xaxis: {
-            categories: lineChartLabels
-        },
         markers: {
             size: 5
+        },
+        xaxis: {
+            categories: lineChartLabels,
+            labels: {
+                style: {
+                    colors: "#ABA4AA"
+                }
+            }
+        },
+        yaxis: {
+            labels: {
+                style: {
+                    colors: "#ABA4AA"
+                }
+            }
         }
     }
 
     const getLineChartData = async () => {
         const url = "http://localhost:8000/api/line-chart-data/";
 
-        await fetch(url, {
-            method: "GET"
-        }).then(response => response.json())
+        await fetch(url).then(response => response.json())
         .then((json) => {
             setLineChartData(json.data);
             setLineChartLabels(json.labels);
@@ -44,13 +54,25 @@ const LineChart = () => {
         options = {
             chart: {
                 id: "line-chart"
-            },
-            xaxis: {
-                categories: lineChartLabels
-            },
-            markers: {
-                size: 10
-            }
+              },
+              markers: {
+                  size: 5
+              },
+              xaxis: {
+                  categories: lineChartLabels,
+                  labels: {
+                      style: {
+                          colors: "#ABA4AA"
+                      }
+                  }
+              },
+              yaxis: {
+                  labels: {
+                      style: {
+                          colors: "#ABA4AA"
+                      }
+                  }
+              }
         };
     }, [lineChartData, lineChartLabels]);
 
@@ -61,6 +83,7 @@ const LineChart = () => {
                 series={series}
                 type="line"
                 width="500"
+                className="chart"
             />
         </>
     )

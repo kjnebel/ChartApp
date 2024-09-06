@@ -10,15 +10,27 @@ const BarChart = () => {
     let options = {
         chart: {
           id: "bar-chart"
+        },
+        xaxis: {
+            labels: {
+                style: {
+                    colors: "#ABA4AA"
+                }
+            }
+        },
+        yaxis: {
+            labels: {
+                style: {
+                    colors: "#ABA4AA"
+                }
+            }
         }
     }
 
     const getBarData = async () => {
         const url = 'http://localhost:8000/api/bar-chart-data/';
 
-        await fetch(url, {
-            method: 'GET'
-        }).then(response => response.json())
+        await fetch(url).then(response => response.json())
         .then((json) => {
             console.log('json: ', json.data)
 
@@ -44,6 +56,7 @@ const BarChart = () => {
                 series={series}
                 type="bar"
                 width="500"
+                className="chart"
             />
         </>
     )
