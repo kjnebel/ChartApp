@@ -5,7 +5,7 @@ For the Next.js I used React with Typescript.
 The Django backend was implemented using Python.
 
 ## Backend setup
-To start the backup you will first want to create and activate a virtual environment in the backend folder using the following commands for windows:  
+To start the backup you will first want to create and activate a virtual environment in the ChartAppBackend/chartapp-backend folder using the following commands for windows:  
 $ python3 -m venv env  
 $ env\Scripts\activate  
 
