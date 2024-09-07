@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
+// Function to get bar chart data and return a rendered bar chart
 const BarChart = () => {
     
     const [barData, setBarData] = useState([{x: "", y:0}]);
@@ -10,6 +11,13 @@ const BarChart = () => {
     let options = {
         chart: {
           id: "bar-chart"
+        },
+        title: {
+            text: "Bar Chart",
+            align: "center",
+            style: {
+                color: "#ABA4AA"
+            }
         },
         xaxis: {
             labels: {

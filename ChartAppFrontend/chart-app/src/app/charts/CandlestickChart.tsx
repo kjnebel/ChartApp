@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
+// Function to get candlestick chart data and return a rendered candlestick chart
 const CandlestickChart = () => {
     
     const [candlestickData, setCandlestickData] = useState([{x: Date, y:[0,0,0,0]}]);
@@ -10,6 +11,13 @@ const CandlestickChart = () => {
     let options = {
         chart: {
           id: "candlestick-chart"
+        },
+        title: {
+            text: "Candlestick Chart",
+            align: "center",
+            style: {
+                color: "#ABA4AA"
+            }
         },
         xaxis: {
             labels: {

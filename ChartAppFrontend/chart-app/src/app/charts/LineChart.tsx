@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
+// Function to get line chart data and return a rendered line chart
 const LineChart = () => {
     
     const [lineChartData, setLineChartData] = useState([0, 0, 0, 0]);
@@ -11,6 +12,13 @@ const LineChart = () => {
     let options = {
         chart: {
           id: "line-chart"
+        },
+        title: {
+            text: "Line Chart",
+            align: "center",
+            style: {
+                color: "#ABA4AA"
+            }
         },
         markers: {
             size: 5
@@ -54,6 +62,13 @@ const LineChart = () => {
         options = {
             chart: {
                 id: "line-chart"
+              },
+              title: {
+                  text: "Line Chart",
+                  align: "center",
+                  style: {
+                      color: "#ABA4AA"
+                  }
               },
               markers: {
                   size: 5

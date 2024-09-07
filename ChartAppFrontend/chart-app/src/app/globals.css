@@ -31,6 +31,13 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: normal;
+}
+
 .chart {
     margin: 8px;
     padding: 8px;

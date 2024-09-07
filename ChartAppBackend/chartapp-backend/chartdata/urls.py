@@ -1,6 +1,7 @@
 from django.urls import path
 from .api import *
 
+# URLs for the api calls
 urlpatterns = [
     path('candlestick-data/', CandleStickData.as_view(), name='candlestick-data'),
     path('line-chart-data/', LineChartData.as_view(), name='line-chart-data'),

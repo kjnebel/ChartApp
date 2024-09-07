@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
+// Function to get pie chart data and return a rendered pie chart
 const PieChart = () => {
     
     const [pieData, setPieData] = useState([0,0,0,0]);
@@ -11,6 +12,13 @@ const PieChart = () => {
     let options = {
         chart: {
           id: "pie-chart"
+        },
+        title: {
+            text: "Pie Chart",
+            align: "center",
+            style: {
+                color: "#ABA4AA"
+            }
         },
         legend: {
             labels: {
@@ -43,6 +51,13 @@ const PieChart = () => {
         options = {
             chart: {
               id: "pie-chart"
+            },
+            title: {
+                text: "Pie Chart",
+                align: "center",
+                style: {
+                    color: "#ABA4AA"
+                }
             },
             legend: {
                 labels: {
