@@ -1,5 +1,9 @@
 # ChartApp
 
+This application was developed using a Django backend, Next.js Frontend, Docker for the backend, and ApexCharts.js for the charts in the frontend.
+For the Next.js I used React with Typescript.
+The Django backend was implemented using Python.
+
 ## Backend setup
 To start the backup you will first want to create and activate a virtual environment in the backend folder using the following commands for windows:
 $ python3 -m venv env
