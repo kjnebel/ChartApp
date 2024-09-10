@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <h1>Blockhouse Chart App</h1>
+        <h1>Chart App</h1>
         <h2>Developed by Kieran Nebel</h2>
         {children}
       </body>
