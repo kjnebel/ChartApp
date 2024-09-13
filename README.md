@@ -4,13 +4,15 @@ This application was developed using a Django backend, Next.js Frontend, Docker 
 For the Next.js I used React with Typescript.
 The Django backend was implemented using Python.
 
+### *Must have Python, Docker, and Node.js installed
+
 ## Backend setup
 To start the backup you will first want to create and activate a virtual environment in the ChartAppBackend/chartapp-backend folder using the following commands for windows:  
 $ python3 -m venv env  
 $ env\Scripts\activate  
 
 And for Mac:  
-$ python3 -m venv env  
+$ python -m venv env  
 $ source env/bin/activate  
 
 Then you will want to run the docker command for the backend in the chartapp-backend folder:  
